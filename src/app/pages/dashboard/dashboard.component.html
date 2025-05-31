@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="top">
+        <div class="box">
+            <span>
+                Action
+            </span>
+            <div class="dropdown">
+                <p *ngFor="let items of actionMovie">{{items?.title}}</p>
+              </div>
+        </div>
+        <div class="box">
+            <span>
+                Comedy
+            </span>
+            <div class="dropdown">
+                <p *ngFor="let items of comedyMovie">{{items?.title}}</p>
+              </div>
+        </div>
+        <div class="box">
+            <span>
+                Drama
+            </span>
+            <div class="dropdown">
+                <p *ngFor="let items of dramaMovie">{{items?.title}}</p>
+              </div>
+        </div>
+    </div>
+</div>
