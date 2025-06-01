@@ -28,4 +28,13 @@ getComedyMovies() {
 getDramaMovies() {
   return this.http.get(`/discover/movie?api_key=${apiKey}&with_genres=18&sort_by=popularity.desc`);
 }
+
+searchMovies(query: string) {
+  return this.http.get(`/search/movie?api_key=${apiKey}&query=${encodeURIComponent(query)}`);
+}
+
+getMovieDetails(movieId: number) {
+  return this.http.get(`/movie/${movieId}?api_key=${apiKey}&language=en-US`);
+}
+
 }

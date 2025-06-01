@@ -1,28 +1,37 @@
 <div class="main">
+    <div class="search">
+        <input type="text" placeholder="search movie....." [(ngModel)]="searchQuery" (keyup)="onSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div *ngIf="searchResults?.length" class="search-results">
+        <div *ngFor="let movie of searchResults" (click)="goToDetails(movie.id)">
+            <h4>{{ movie.title }}</h4>
+        </div>
+    </div>
     <div class="top">
         <div class="box">
             <span>
                 Action
             </span>
             <div class="dropdown">
-                <p *ngFor="let items of actionMovie">{{items?.title}}</p>
-              </div>
+                <p *ngFor="let items of actionMovie" (click)="goToDetails(items.id)">{{items?.title}}</p>
+            </div>
         </div>
         <div class="box">
             <span>
                 Comedy
             </span>
             <div class="dropdown">
-                <p *ngFor="let items of comedyMovie">{{items?.title}}</p>
-              </div>
+                <p *ngFor="let items of comedyMovie" (click)="goToDetails(items.id)">{{items?.title}}</p>
+            </div>
         </div>
         <div class="box">
             <span>
                 Drama
             </span>
             <div class="dropdown">
-                <p *ngFor="let items of dramaMovie">{{items?.title}}</p>
-              </div>
+                <p *ngFor="let items of dramaMovie" (click)="goToDetails(items.id)">{{items?.title}}</p>
+            </div>
         </div>
     </div>
 </div>

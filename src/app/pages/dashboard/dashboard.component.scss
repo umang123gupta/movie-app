@@ -12,12 +12,13 @@
     .top {
         position: absolute;
         right: 2%;
-        top: 2%;
+        top: 20%;
         display: flex;
 
         @media(max-width:768px) {
             flex-direction: column;
             right: 25%;
+            top: 15%;
         }
 
         .box {
@@ -37,9 +38,10 @@
             cursor: pointer;
 
             @media(max-width:768px) {
-                height: 3.75rem; // Half the original height
-                max-width: 6.5rem; // Half the original width
+                height: 3.75rem;
+                max-width: 6.5rem;
                 padding: 0 1rem;
+                margin-bottom: 10px;
             }
 
             span {
@@ -47,6 +49,7 @@
                 font-family: 'Luckiest Guy', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 font-size: 25px;
                 z-index: 1;
+
                 @media(max-width:768px) {
                     font-size: 10px;
                 }
@@ -56,19 +59,22 @@
                 display: none;
                 position: absolute;
                 top: 100%;
-                left: 0;
+                left: -20%;
                 background: rgba(0, 0, 0, 0.9);
                 color: white;
                 padding: 10px;
                 border-radius: 6px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 z-index: 2;
-                min-width: 150px;
+                max-width: 220px;
                 max-height: 300px;
                 overflow: auto;
+                overflow-x: hidden;
+
                 @media(max-width:768px) {
-                    max-width: 120px;
-                    
+                    max-width: 200px;
+                    left: -40px;
+                    overflow-x: auto;
                 }
 
                 p {
@@ -87,4 +93,63 @@
             }
         }
     }
+}
+
+
+.search {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 3rem;
+    font-size: 0.875rem;
+    padding: 0.65rem 2.5rem 0.65rem 1.5rem;
+    width: 400px;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px #fff;
+    text-align: center;
+    outline: none;
+
+    @media(max-width:768px) {
+        max-width: 200px;
+
+    }
+}
+
+.search input::placeholder {
+    color: #ffffffca;
+}
+
+.search i {
+    color: #ffffff97;
+    margin-left: -35px;
+    z-index: 1;
+}
+
+.search-results {
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px #fff;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 2;
+}
+
+.search-results h4 {
+    margin: 8px 0;
+    padding: 8px;
+    font-size: 12px;
+    border-bottom: 1px solid #ffffff22;
 }
