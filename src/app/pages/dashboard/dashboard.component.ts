@@ -27,27 +27,51 @@ export class DashboardComponent implements OnInit {
   }
 
   getMovies() {
-    this.movieService.getActionMovies().subscribe((res: any) => {
-      this.actionMovie = res.results;
-    })
-    this.movieService.getComedyMovies().subscribe((res: any) => {
-      this.comedyMovie = res.results;
-    })
-    this.movieService.getDramaMovies().subscribe((res: any) => {
-      this.dramaMovie = res.results;
-    })
+    this.movieService.getActionMovies().subscribe({
+      next: (res: any) => {
+        this.actionMovie = res.results;
+      },
+      error: (err) => {
+        console.error('Error fetching action movies:', err);
+      }
+    });
+
+    this.movieService.getComedyMovies().subscribe({
+      next: (res: any) => {
+        this.comedyMovie = res.results;
+      },
+      error: (err) => {
+        console.error('Error fetching comedy movies:', err);
+      }
+    });
+
+    this.movieService.getDramaMovies().subscribe({
+      next: (res: any) => {
+        this.dramaMovie = res.results;
+      },
+      error: (err) => {
+        console.error('Error fetching drama movies:', err);
+      }
+    });
   }
 
   onSearch(): void {
     const query = this.searchQuery.trim();
     if (query) {
-      this.movieService.searchMovies(query).subscribe((res: any) => {
-        this.searchResults = res.results;
+      this.movieService.searchMovies(query).subscribe({
+        next: (res: any) => {
+          this.searchResults = res.results;
+        },
+        error: (err) => {
+          console.error('Error while searching movies:', err);
+          this.searchResults = [];
+        }
       });
     } else {
       this.searchResults = [];
     }
   }
+
 
   goToDetails(id: any) {
     this.router.navigate(['/home/dashboard/movie-details'], { queryParams: { 'id': id } })

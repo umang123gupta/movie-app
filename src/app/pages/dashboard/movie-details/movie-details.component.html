@@ -4,14 +4,14 @@
             <i (click)="goBack()" class="fa-solid fa-backward"></i>
         </div>
 
-        <a href="#"><img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="cover"
+        <a href="#"><img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails?.poster_path" alt="cover"
                 class="cover" /></a>
 
         <div class="hero" [ngStyle]="{'background-image': 'url(' + getBackdropUrl(movieDetails?.backdrop_path) + ')'}">
 
             <div class="details">
 
-                <div class="title1">{{ movieDetails.title }}</div>
+                <div class="title1">{{ movieDetails?.title }}</div>
 
             </div>
 

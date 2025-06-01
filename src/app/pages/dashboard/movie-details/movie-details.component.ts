@@ -26,12 +26,18 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getMovieDetails(id: any) {
-    this.service.getMovieDetails(id).subscribe((res: any) => {
-      this.movieDetails = res;
-      this.roundedRating = Math.round((res.vote_average / 2) * 2) / 2;
-      this.getBackdropUrl(res.backdrop_path)
-    })
+    this.service.getMovieDetails(id).subscribe({
+      next: (res: any) => {
+        this.movieDetails = res;
+        this.roundedRating = Math.round((res.vote_average / 2) * 2) / 2;
+        this.getBackdropUrl(res.backdrop_path);
+      },
+      error: (err) => {
+        console.error('Error fetching movie details:', err);
+      }
+    });
   }
+
   getBackdropUrl(path: string): string {
     return `https://image.tmdb.org/t/p/original${path}`;
   }
