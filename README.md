@@ -1,3 +1,45 @@
+# 🎬 Movie App
+
+An Angular-based web application that displays action, comedy, and drama movies using data from The Movie Database (TMDb) API.
+
+## 🚀 Features
+
+- View action, comedy, and drama movies.
+- Search for movies by title.
+- View movie details including rating and backdrop.
+- Navigation with Angular Router.
+- Error handling for failed API requests.
+
+---
+
+## 🛠️ Tech Stack
+
+- Angular 16+
+- RxJS & HttpClient
+- SCSS for styling
+- TMDb API
+
+---
+
+## 📦 Prerequisites
+
+Before running this app locally, ensure the following are installed:
+
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [Angular CLI](https://angular.io/cli) (v16+)
+- A valid TMDb API key
+
+---
+
+## 🔧 Setup & Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/umang123gupta/movie-app
+   cd movie-app
+
+
 # MovieApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
@@ -16,12 +58,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the test cases.
 
-## Running end-to-end tests
+## 🚀 Deployment Guide
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This document covers how to set up, run, and deploy the application using Firebase Hosting.
+url `https://movie-app-3dadd.web.app/home/dashboard` to run live app.
