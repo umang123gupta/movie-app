@@ -8,7 +8,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  movieId: any;
+  movieId: number = 0;
   movieDetails: any;
   roundedRating: number = 0;
 
@@ -25,7 +25,7 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
-  getMovieDetails(id: any) {
+  getMovieDetails(id: number) {
     this.service.getMovieDetails(id).subscribe({
       next: (res: any) => {
         this.movieDetails = res;

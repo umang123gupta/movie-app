@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieService } from 'src/app/services/movie/movie.service';
 
-// import { MovieService } from '../../services';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -73,7 +71,7 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  goToDetails(id: any) {
+  goToDetails(id: number) {
     this.router.navigate(['/home/dashboard/movie-details'], { queryParams: { 'id': id } })
   }
 }
